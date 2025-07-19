@@ -8,6 +8,7 @@ dependencies {
     compileOnly(libs.velocity.api)
     annotationProcessor(libs.velocity.api)
     compileOnly(project(":alerts-shared"))
+    implementation(libs.configurate.yaml)
 }
 
 sourceSets.main {
@@ -39,7 +40,11 @@ tasks {
     shadowJar {
         archiveBaseName = "MLAlerts-Velocity"
         archiveClassifier = null
-        include("org.spongepowered")
-        relocate("org.spongepowered", "net.strokkur.alerts.velocity.libs")
+        from(project(":alerts-shared").sourceSets.main.get().output)
+        
+        val libs = "net.strokkur.alerts.velocity.libs"
+        relocate("org.spongepowered", libs)
+        relocate("io.leangen", libs)
+        relocate("net.kyori", libs)
     }
 }
