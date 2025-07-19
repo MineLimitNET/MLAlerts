@@ -43,8 +43,8 @@ tasks {
         from(project(":alerts-shared").sourceSets.main.get().output)
         
         val libs = "net.strokkur.alerts.velocity.libs"
-        relocate("org.spongepowered", libs)
+        relocate("org.spongepowered.configurate", "$libs.configurate")
         relocate("io.leangen", libs)
-        relocate("net.kyori", libs)
+        relocate("net.kyori.option", "$libs.option")
     }
 }
