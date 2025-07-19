@@ -22,5 +22,14 @@ import org.spongepowered.configurate.objectmapping.ConfigSerializable;
 
 @ConfigSerializable
 class AlertsConfigModel {
+    
     public String format = "<b><dark_red>ALERT</b> <dark_gray>(<gray><sender></gray>)</dark_gray> <message>";
+    
+    public Title title = new Title();
+    
+    @ConfigSerializable
+    static class Title {
+        public String title = "<red>b>ALERT";
+        public String subtitle = "<message>";
+    }
 }

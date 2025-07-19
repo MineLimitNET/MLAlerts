@@ -29,7 +29,11 @@ public interface AlertsConfig {
 
     String FILE_NAME = "config.yml";
 
+    void reload(Path dataPath, Logger logger) throws IOException;
+
     Component getMessageFormat(TagResolver... resolvers);
 
-    void reload(Path dataPath, Logger logger) throws IOException;
+    Component getTitleFormat(TagResolver... resolvers);
+
+    Component getSubTitleFormat(TagResolver... resolvers);
 }

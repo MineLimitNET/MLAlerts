@@ -81,4 +81,14 @@ public class AlertsConfigImpl implements AlertsConfig {
     public Component getMessageFormat(TagResolver... resolvers) {
         return MiniMessage.miniMessage().deserialize(model.format, resolvers);
     }
+
+    @Override
+    public Component getTitleFormat(TagResolver... resolvers) {
+        return MiniMessage.miniMessage().deserialize(model.title.title, resolvers);
+    }
+
+    @Override
+    public Component getSubTitleFormat(TagResolver... resolvers) {
+        return MiniMessage.miniMessage().deserialize(model.title.subtitle, resolvers);
+    }
 }

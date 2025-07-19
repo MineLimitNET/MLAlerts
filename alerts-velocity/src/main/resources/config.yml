@@ -5,11 +5,19 @@
 #                                                                                                             #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-# A MiniMessage-formatted string which gets printed to all servers
-# in this velocity network. The following placeholders can be used:
+# The following placeholders can be used:
 #   <message> - The message of the alert.
 #   <sender> - The sender of the alert.
+
+# A MiniMessage-formatted string which gets printed to all servers  in this velocity network.
 format: |-
   <white>
   <b><dark_red>ALERT</b> <dark_gray>(<gray><sender></gray>)</dark_gray> <message>
   </white>
+
+# The title to display to all players
+title:
+  # The top part of the title
+  title: <b><dark_red>ALERT
+  # The bottom part of the title
+  subtitle: <message>

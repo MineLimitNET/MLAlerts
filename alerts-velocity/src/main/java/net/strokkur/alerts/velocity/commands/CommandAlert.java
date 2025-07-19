@@ -26,6 +26,8 @@ import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.server.RegisteredServer;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import net.kyori.adventure.title.Title;
 import net.strokkur.alerts.velocity.config.AlertsConfig;
 
 public class CommandAlert {
@@ -37,13 +39,21 @@ public class CommandAlert {
                 .executes(ctx -> {
                     String sourceName = ctx.getSource() instanceof Player player ? player.getUsername() : "console";
 
+                    TagResolver resolver = TagResolver.resolver(
+                        Placeholder.unparsed("sender", sourceName),
+                        Placeholder.parsed("message", StringArgumentType.getString(ctx, "message"))
+                    );
+
                     for (RegisteredServer server : proxy.getAllServers()) {
-                        server.sendMessage(config.getMessageFormat(
-                            Placeholder.unparsed("sender", sourceName),
-                            Placeholder.parsed("message", StringArgumentType.getString(ctx, "message"))
+                        server.sendMessage(config.getMessageFormat(resolver));
+                        server.showTitle(Title.title(
+                            config.getTitleFormat(resolver),
+                            config.getSubTitleFormat(resolver),
+                            Title.DEFAULT_TIMES
                         ));
                     }
                     
+                    proxy.getConsoleCommandSource().sendMessage(config.getMessageFormat(resolver));
                     return 1;
                 })
             )
