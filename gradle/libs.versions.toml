@@ -12,6 +12,7 @@ configurate = "4.2.0"
 jspecify = "1.0.0"
 jetbrains-annotations = "26.0.2"
 slf4j = "2.0.17"
+shadow = "9.0.0-rc1"
 
 [libraries]
 velocity-api = { module = "com.velocitypowered:velocity-api", version.ref = "velocity" }
@@ -27,3 +28,4 @@ run-velocity = { id = "xyz.jpenilla.run-velocity", version.ref = "run-server" }
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-server" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 blossom = { id = "net.kyori.blossom", version.ref = "blossom" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

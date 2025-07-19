@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.run.velocity)
+    alias(libs.plugins.shadow)
     alias(libs.plugins.blossom)
 }
 
@@ -16,6 +17,10 @@ sourceSets.main {
 }
 
 tasks {
+    build {
+        dependsOn(shadowJar)
+    }
+    
     runVelocity {
         velocityVersion(libs.versions.velocity.get())
         environment("VELOCITY_FORWARDING_SECRET", "MLALERTS_SECRET_987")
@@ -27,6 +32,14 @@ tasks {
 
     jar {
         archiveBaseName = "MLAlerts-Velocity"
+        archiveClassifier = "noshade"
         from(project(":alerts-shared").sourceSets.main.get().output)
+    }
+    
+    shadowJar {
+        archiveBaseName = "MLAlerts-Velocity"
+        archiveClassifier = null
+        include("org.spongepowered")
+        relocate("org.spongepowered", "net.strokkur.alerts.velocity.libs")
     }
 }

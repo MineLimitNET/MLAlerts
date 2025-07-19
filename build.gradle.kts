@@ -2,7 +2,6 @@ import com.diffplug.gradle.spotless.SpotlessPlugin
 
 plugins {
     id("java-library")
-    alias(libs.plugins.blossom)
     alias(libs.plugins.spotless)
 }
 
