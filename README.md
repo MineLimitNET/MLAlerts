@@ -28,11 +28,19 @@ The `-unshaded` jar should **not** be used.
 The config is located under `/plugins/mlalerts/config.yml` and has the following content:
 
 ```yml
+# A MiniMessage-formatted string which gets printed to all servers  in this velocity network.
 format: |-
   <white>
   <b><dark_red>ALERT</b> <dark_gray>(<gray><sender></gray>)</dark_gray> <message>
   </white>
-  ```
+
+# The title to display to all players
+title:
+  # The top part of the title
+  title: <b><dark_red>ALERT
+  # The bottom part of the title
+  subtitle: <message>
+```
 
 The default one declares a 3-line message to be sent. You can use the full MiniMessage specifications,
 viewable here: https://docs.advntr.dev/minimessage/format.html.
