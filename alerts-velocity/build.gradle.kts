@@ -26,6 +26,7 @@ tasks {
     }
 
     jar {
+        archiveBaseName = "MLAlerts-Velocity"
         from(project(":alerts-shared").sourceSets.main.get().output)
     }
 }
