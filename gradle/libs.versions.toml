@@ -1,5 +1,7 @@
 [versions]
 velocity = "3.4.0-SNAPSHOT"
+minecraft = "1.21.1"
+paper = "1.21.1-R0.1-SNAPSHOT"
 
 run-server = "2.3.1"
 spotless = "7.0.2"
@@ -7,10 +9,21 @@ blossom = "2.1.0"
 
 configurate = "4.2.0"
 
+jspecify = "1.0.0"
+jetbrains-annotations = "26.0.2"
+slf4j = "2.0.17"
+
 [libraries]
 velocity-api = { module = "com.velocitypowered:velocity-api", version.ref = "velocity" }
+paper-api = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
 configurate-yaml = { module = "org.spongepowered:configurate-yaml", version.ref = "configurate" }
+
+jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
+jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains-annotations" }
+slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 [plugins]
 run-velocity = { id = "xyz.jpenilla.run-velocity", version.ref = "run-server" }
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-server" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+blossom = { id = "net.kyori.blossom", version.ref = "blossom" }

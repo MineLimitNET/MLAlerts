@@ -1,0 +1,7 @@
+name: MLAlerts
+version: $version
+api-version: '$apiVersion'
+author: Strokkur24
+website: https://github.com/MineLimitNET/MLAlerts
+
+main: net.strokkur.alerts.paper.AlertsPaper

@@ -1,10 +1,27 @@
+import com.diffplug.gradle.spotless.SpotlessPlugin
+
 plugins {
-    id("java")
+    id("java-library")
+    alias(libs.plugins.blossom)
+    alias(libs.plugins.spotless)
 }
 
 allprojects {
     apply {
-        plugin<JavaPlugin>()
+        plugin<SpotlessPlugin>()
+    }
+
+    spotless {
+        java {
+            licenseHeaderFile(rootProject.file("HEADER"))
+            target("**/*.java")
+        }
+    }
+}
+
+subprojects {
+    apply {
+        plugin<JavaLibraryPlugin>()
     }
 
     group = "net.strokkur"

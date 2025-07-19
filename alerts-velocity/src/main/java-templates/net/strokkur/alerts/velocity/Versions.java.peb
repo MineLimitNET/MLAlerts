@@ -1,0 +1,5 @@
+package net.strokkur.alerts.velocity;
+    
+class Versions {
+    public static final String PLUGIN_VERSION = "{{ version }}";
+}

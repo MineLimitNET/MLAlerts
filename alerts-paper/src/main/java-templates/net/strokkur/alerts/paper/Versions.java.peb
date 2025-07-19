@@ -1,0 +1,5 @@
+package net.strokkur.alerts.paper;
+
+class Versions {
+    public static final String CONFIGURATE = "{{ configurate }}";
+}
