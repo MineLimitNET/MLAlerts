@@ -16,3 +16,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+package net.strokkur.alerts.velocity.config;
+
+import org.spongepowered.configurate.objectmapping.ConfigSerializable;
+
+@ConfigSerializable
+class AlertsConfigModel {
+    public String format = "<b><dark_red>ALERT</b> <dark_gray>(<gray><sender></gray>)</dark_gray> <message>";
+}

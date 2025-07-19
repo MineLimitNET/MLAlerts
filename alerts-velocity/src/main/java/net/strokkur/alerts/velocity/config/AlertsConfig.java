@@ -16,3 +16,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+package net.strokkur.alerts.velocity.config;
+
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import org.slf4j.Logger;
+
+import java.io.IOException;
+import java.nio.file.Path;
+
+public interface AlertsConfig {
+
+    String FILE_NAME = "config.yml";
+
+    Component getMessageFormat(TagResolver... resolvers);
+
+    void reload(Path dataPath, Logger logger) throws IOException;
+}

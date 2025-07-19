@@ -1,0 +1,15 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                                                                             #
+#                                            MineLimit Config File                                            #
+#                                                By Strokkur24                                                #
+#                                                                                                             #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# A MiniMessage-formatted string which gets printed to all servers
+# in this velocity network. The following placeholders can be used:
+#   <message> - The message of the alert.
+#   <sender> - The sender of the alert.
+format: |-
+  <white>
+  <b><dark_red>ALERT</b> <dark_gray>(<gray><sender></gray>)</dark_gray> <message>
+  </white>
